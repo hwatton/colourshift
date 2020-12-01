@@ -2,6 +2,7 @@
   text-align: center;
 }
 
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -10,7 +11,7 @@ ul {
   background-color: rgb(183, 0, 255);
 }
 
-li {
+li a {
   float: left;
   display: block;
   color: white;
@@ -19,23 +20,19 @@ li {
   text-decoration: none;
 }
 
-.title {
-  font-size: 22;
-}
 
-li:hover {
+li a:hover {
   cursor: pointer;
   background-color: rgb(247, 0, 255);
 }
 .navBar {
   width: 100%;
   background-color: rgb(183, 0, 255);
+  height: auto;
 }
 
 .dropdown {
-  float: right;
   color: white;
-  right: 0;
   position: relative;
   display: inline-block;
 }

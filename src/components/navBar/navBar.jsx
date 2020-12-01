@@ -7,15 +7,18 @@ black back, overlaid cols text possibly */
 function Navbar(props) {
   return (
     <div className="navBar">
+      <div className="fixedDiv">
+        <svg height="30" width="50"></svg>
+      </div>
       <div className="dropdown">
         <span>menu</span>
         <div className="dropdown-content">
           <ul>
             <li>
-              <a>choose level</a>
+              <a href="#level">choose level</a>
             </li>
             <li>
-              <a>about</a>
+              <a href="#level">about</a>
             </li>
           </ul>
         </div>
