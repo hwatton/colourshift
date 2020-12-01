@@ -11,7 +11,8 @@ class App extends Component {
 
     this.state = {
       gamePages: ["intro", "game", "about"],
-      page: "intro" 
+      page: "intro",
+      game: "football"
     };
     this.handleSVGClick = this.handleSVGClick.bind(this)
   }
@@ -32,7 +33,7 @@ class App extends Component {
         {
       (()=> {
         switch (this.state.page) {
-          case "intro": return <Intro />;
+          case "intro": return <Intro game={this.state.game}/>;
           case "game": return <Game />;
           case "about": return <About />;
           default: return null;
