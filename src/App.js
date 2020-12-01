@@ -12,9 +12,16 @@ class App extends Component {
     this.state = {
       gamePages: ["intro", "game", "about"],
       page: "intro",
-      game: "football"
+      colourArray: [
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)"
+    ],
+      colour: "rgb(255,0,0)",
+      colourIndex: 0,
     };
     this.handleSVGClick = this.handleSVGClick.bind(this)
+  
   }
 
  handleSVGClick() {
@@ -25,15 +32,19 @@ class App extends Component {
     })
   }
 
+  
+
   render() {
     return (
       <div className="App">
         <Navbar />
-        <p>Placeholder</p>
         {
       (()=> {
         switch (this.state.page) {
-          case "intro": return <Intro game={this.state.game}/>;
+          case "intro": return <Intro 
+          colour={this.state.colour}
+          cliker={this.handleSVGClick}
+          />;
           case "game": return <Game />;
           case "about": return <About />;
           default: return null;
