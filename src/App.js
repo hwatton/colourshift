@@ -1,32 +1,26 @@
-import logo from "./logo.svg";
 import "./App.css";
 import React, { Component } from "react";
+import Navbar from "./components/navBar/navBar.jsx";
 
-/* 
-to do in here:
+class App extends Component {
+  constructor(props) {
+    super(props);
 
-create state, whihc can toggle the game/about/intro sequences/pages
-*/
+    this.state = {
+      game: false,
+      intro: true,
+      about: false
+    };
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  render() {
+    return (
+      <div className="App">
+        <Navbar />
+        <p>Placeholder</p>
+      </div>
+    );
+  }
+} //class App
 
 export default App;
