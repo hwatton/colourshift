@@ -2,6 +2,12 @@ import logo from "./logo.svg";
 import "./App.css";
 import React, { Component } from "react";
 
+/* 
+to do in here:
+
+create state, whihc can toggle the game/about/intro sequences/pages
+*/
+
 function App() {
   return (
     <div className="App">

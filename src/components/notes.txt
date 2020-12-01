@@ -1,0 +1,37 @@
+components:
+
+navbar: basic with title and menu, which should have three li items .
+    > about, accessibility apology.
+    >
+
+    >don;t use bootstrap. can of worms. do it plain, witha flex.
+
+footer. include copyright and date it.
+
+
+gamebox/holds all games and current state for game play.
+> gamespace   > grid    >selection handles
+                        >game area
+              > non grid entry level game space
+
+> tile holder /tools    > row tiles
+                        > col tiles
+                        > single components (entry level)
+
+
+
+composition of omponents:
+
+gamebox : state, functions to update state. class based, probably large.
+
+grid : class based maybe, might help with d3 interaction( componentDid update etc)
+      > d3 based function separate exported module?
+      > keep class clean and pass the leg work to this module?
+
+non grid > class based, but only to use lifecycle. good use case for a hook if I can wokr it out!
+    > write as class and make function in an update once I understand this better
+
+
+
+functionality. make browser "back" render home page when inside game play.
+
