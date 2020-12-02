@@ -1,25 +1,22 @@
-.circleThing{
-    mix-blend-mode: screen;
-    transform-origin: 50% 31%;
-    animation: rotating 50s linear infinite;
-    
+.circleThing {
+  mix-blend-mode: screen;
+  transform-origin: 50% 49%;
+  animation: rotating 50s linear infinite;
 }
 
-.svgText{
-   fill: rgb(255,255,0);
-    text-anchor: middle;
-    font-size: 50px;
-    font-style: italic;
-    mix-blend-mode: screen;
+.svgText {
+  fill: rgb(255, 255, 0);
+  text-anchor: middle;
+  font-family: "Prompt", sans-serif;
+  font-size: 50px;
+  mix-blend-mode: screen;
 }
 
 @keyframes rotating {
-    from {
-  
-      transform: rotate(360deg);
-    }
-    to {
-  
-      transform: rotate(0deg);
-    }
+  from {
+    transform: rotate(360deg);
   }
+  to {
+    transform: rotate(0deg);
+  }
+}
