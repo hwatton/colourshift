@@ -12,6 +12,10 @@
   mix-blend-mode: screen;
 }
 
+.svgHolder {
+  will-change: opacity;
+}
+
 @keyframes rotating {
   from {
     transform: rotate(360deg);

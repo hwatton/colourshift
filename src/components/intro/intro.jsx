@@ -105,7 +105,7 @@ class Intro extends Component {
 
   render() {
     return (
-      <div>
+      <div className="svgHolder">
         <svg
           ref={(node) => (this.node = node)}
           onClick={this.handleClick}
