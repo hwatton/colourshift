@@ -75,6 +75,7 @@ class Intro extends Component {
     let counter = 0;
 
     function titleColourChange() {
+      /* uh oh. cancel this when it's unmounted. have a state boolean, or maybe use cmoponennt will unmount */
       setTimeout(() => {
         if (counter >= 2) {
           counter = 0;

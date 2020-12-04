@@ -60,7 +60,7 @@ goHome() {
         }
       })()
      }
-     <svg onClick={this.handleSVGClick} height="50" width="50"style={{backgroundColor: "red"}}></svg>
+
       </div>
     );
   }

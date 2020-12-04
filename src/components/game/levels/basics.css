@@ -1,0 +1,13 @@
+circle{
+    mix-blend-mode: screen;
+}
+
+.svgHolder{
+    will-change: opacity;
+    max-height: 90%;
+    margin: auto;
+}
+
+svg{
+height: 50%;
+}
