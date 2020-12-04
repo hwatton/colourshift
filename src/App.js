@@ -20,6 +20,8 @@ class App extends Component {
       colour: "rgb(255,0,0)",
       colourIndex: 0,
     };
+
+    this.goHome = this.goHome.bind(this)
     this.handleSVGClick = this.handleSVGClick.bind(this)
   
   }
@@ -32,18 +34,25 @@ class App extends Component {
     })
   }
 
+goHome() {
+  /* ADD HOME LINK ACTION IN HERE,
+  OR RE WRITE THE DIV THAT HOLDS IT WITH A HREF OR WHATEVER */
+  console.log("Iwas clicked")
+  return false
+}
+
   
 
   render() {
     return (
       <div className="App">
-        <Navbar />
+        <Navbar clicker={this.goHome}/>
         {
       (()=> {
         switch (this.state.page) {
           case "intro": return <Intro 
           colour={this.state.colour}
-          cliker={this.handleSVGClick}
+          clicker={this.handleSVGClick}
           />;
           case "game": return <Game />;
           case "about": return <About />;

@@ -45,6 +45,7 @@ class Intro extends Component {
     }
 
     //
+    console.log(dataset)
 
     D3.select(node).selectAll("circle").data(dataset).enter().append("circle");
 
@@ -68,7 +69,7 @@ class Intro extends Component {
     D3.select(node)
       .append("text")
       .attr("class", "svgText")
-      .attr("transform", "translate(" + ht / 2 + ", " + 300 / 2 + ")")
+      .attr("transform", "translate(" + ht / 2 + ", " + 320 / 2 + ")")
       .text("colourShift.");
 
     let counter = 0;
@@ -109,10 +110,12 @@ class Intro extends Component {
         <svg
           ref={(node) => (this.node = node)}
           onClick={this.handleClick}
+          id="svgAnimation"
           viewBox="0 0 500 300"
           preserveAspectRatio="xMinYMin meet"
         ></svg>
-        <h2>click to play >>></h2>
+        <br/>
+        <h2 className="click-play">click to play >>></h2>
       </div>
     );
   }

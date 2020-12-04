@@ -12,6 +12,19 @@
   mix-blend-mode: screen;
 }
 
+#svgAnimation {
+  max-width: 800px;
+}
+
+.click-play{
+display: block;
+color: rgb(255, 74, 255);
+}
+
+.click-play:hover{
+  color: rgb(255, 0, 255);
+}
+
 .svgHolder {
   will-change: opacity;
 }
