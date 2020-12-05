@@ -24,13 +24,16 @@ componentDidMount() {
       const node = this.node
 
       let svgC = D3.select(node)
-      let tx =250
+      let tx =350
       let ty = 250
       let tr = 35
+    
+let movingGroup = svgC.append("g")
+      let circleGroup = svgC.append("g")
 
       let cenCir = [{x: tx, y: ty, r: tr, id: "centreCircle"}]
 
-      svgC.selectAll("circle")
+      movingGroup.selectAll("circle")
       .data(cenCir)
       .enter()
       .append("circle")
@@ -41,9 +44,9 @@ componentDidMount() {
       .attr("fill", "rgb(0,0,255)")
 
 
-      let cDat = [{x: 30, y: 50, r: 35, id: "mover"}]
+      let cDat = [{x: 150, y: 250, r: 35, id: "mover"}]
 
-      let circleGroup = svgC.append("g")
+     
       let diffY, diffX
       const drag_handler = D3.drag()
       .on("start", function(d, event){
@@ -67,6 +70,11 @@ if (cX > (tx - tr) && cX < (tx + tr)){
   if (cY > (ty - tr) && cY < (ty + tr)){
     //double party
 
+    D3.select("#centreCircle")
+      .transition()
+      .duration(500)
+      .attr("fill", "rgb(255,0,255)")
+
     D3.select(this).transition()
     .duration(600)
     .ease(D3.easeBounce)
@@ -76,10 +84,7 @@ if (cX > (tx - tr) && cX < (tx + tr)){
       D3.select(this).remove()
       
     })
-    D3.select("#centreCircle")
-      .transition()
-      .duration(1500)
-      .attr("fill", "magenta")
+    
   }
 }
 
@@ -109,10 +114,15 @@ if (cX > (tx - tr) && cX < (tx + tr)){
   render() {
     return (
       <div className="svgHolder">
+        <div className="instructionHolder">
+          <h4 className="instruction">Turn the blue circle magenta</h4>
+        </div>
         <svg
           ref={(node) => (this.node = node)}
           onClick={this.handleClick}
           id="svgAnimation"
+          height="500"
+          width="500"
           viewBox="0 0 500 500"
           preserveAspectRatio="xMinYMin meet"
         ></svg>

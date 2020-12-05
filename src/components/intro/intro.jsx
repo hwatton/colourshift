@@ -7,19 +7,25 @@ class Intro extends Component {
     super(props);
 
     this.state = {
-      colour: this.props.colour
+      colour: this.props.colour,
+
     };
 
     this.loadingGraphics = this.loadingGraphics.bind(this);
+
   }
 
   componentDidMount() {
+
     this.loadingGraphics();
+
   }
 
   componentDidUpdate() {
     this.loadingGraphics();
   }
+
+ 
 
   handleClick = this.props.clicker;
 
@@ -45,7 +51,7 @@ class Intro extends Component {
     }
 
     //
-    console.log(dataset)
+
 
     D3.select(node).selectAll("circle").data(dataset).enter().append("circle");
 
@@ -54,7 +60,7 @@ class Intro extends Component {
     D3.select(node)
       .selectAll("circle")
       .data(dataset)
-      .attr("class", "circleThing")
+      .attr("class", "circleThing intro-element")
       .attr("fill", (d, i) => {
         return d.col;
       })
@@ -68,46 +74,53 @@ class Intro extends Component {
 
     D3.select(node)
       .append("text")
-      .attr("class", "svgText")
+      .attr("class", "svgText intro-element")
       .attr("transform", "translate(" + ht / 2 + ", " + 320 / 2 + ")")
       .text("colourShift.");
 
-    let counter = 0;
-
-    function titleColourChange() {
-      /* uh oh. cancel this when it's unmounted. have a state boolean, or maybe use cmoponennt will unmount */
-      setTimeout(() => {
-        if (counter >= 2) {
-          counter = 0;
-        } else {
-          counter = counter + 1;
-        }
-        console.log(counter);
-        D3.select(".svgText")
-          .transition()
-          .duration(2100)
-          .style("fill", () => {
-            return cymData[counter];
-          });
-
-        requestAnimationFrame(titleColourChange);
-      }, 3000);
-    }
-
-    D3.select(".svgText")
-      .transition()
-      .duration(2500)
-      .style("fill", () => {
-        return cymData[1];
-      })
-      .on("end", () => {
-        titleColourChange();
-      });
+ let counter = 0
+function transitionText() {
+  if (counter>=2) {
+    counter = 0
+  }else{
+    counter = counter+1
   }
+
+  D3.select(".svgText")
+  .transition()
+  .duration(2000)
+  .style("fill", () => {
+    let ind = Math.floor(Math.random()*3)
+   return cymData[counter];
+  
+  })
+  .on("end", ()=>{
+    console.log(counter)
+    transitionText()
+  } )
+}
+
+transitionText()
+ 
+
+
+ 
+
+      //titleColourChange(this.props.currentPage);
+}
+
+
+
+
+
+ 
+ 
+     
+   
 
   render() {
     return (
-      <div className="svgHolder">
+      <div className="introHolder">
         <svg
           ref={(node) => (this.node = node)}
           onClick={this.handleClick}
@@ -116,9 +129,14 @@ class Intro extends Component {
           preserveAspectRatio="xMinYMin meet"
         ></svg>
         <br/>
-        <h2 className="click-play">click to play >>></h2>
+        <h2 
+        className="click-play intro-element"
+        onClick={this.props.enableGame}
+        >click to play >>></h2>
       </div>
     );
   }
 }
+
+
 export default Intro;

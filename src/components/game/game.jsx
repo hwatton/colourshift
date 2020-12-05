@@ -1,5 +1,6 @@
 import Basics from "./levels/basics.jsx"
 import React, { Component } from "react"
+import styles from "./game.css";
 
 
 
@@ -19,6 +20,9 @@ Make 5 levels without the grid.*/
     render() {
         return (
             <div>
+                <div className="levelHolder">
+                <h2 className="level">Level: {this.state.gameLevel}</h2>
+                </div>
             <Basics/>
             </div>
         )

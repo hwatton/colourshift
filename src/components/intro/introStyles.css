@@ -19,13 +19,14 @@
 .click-play{
 display: block;
 color: rgb(255, 74, 255);
+cursor: pointer;
 }
 
 .click-play:hover{
   color: rgb(255, 0, 255);
 }
 
-.svgHolder {
+.introHolder {
   will-change: opacity;
 }
 

@@ -23,6 +23,7 @@ class App extends Component {
 
     this.goHome = this.goHome.bind(this)
     this.handleSVGClick = this.handleSVGClick.bind(this)
+    this.goToGame = this.goToGame.bind(this)
   
   }
 
@@ -34,11 +35,23 @@ class App extends Component {
     })
   }
 
+  goToGame() {
+
+    this.setState((state)=>{
+      return {page: "game"}
+    
+    })
+  }
+
+ 
+
 goHome() {
-  /* ADD HOME LINK ACTION IN HERE,
-  OR RE WRITE THE DIV THAT HOLDS IT WITH A HREF OR WHATEVER */
-  console.log("Iwas clicked")
-  return false
+
+  const index = Math.floor(Math.random()*3)
+    this.setState((state)=>{
+      return {page: "intro"}
+    
+    })
 }
 
   
@@ -53,6 +66,7 @@ goHome() {
           case "intro": return <Intro 
           colour={this.state.colour}
           clicker={this.handleSVGClick}
+          enableGame={this.goToGame}
           />;
           case "game": return <Game />;
           case "about": return <About />;
