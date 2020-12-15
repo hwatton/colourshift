@@ -1,3 +1,6 @@
+This is a precursor to another project, which doesn't curently use react (just a horrible BOATLOAD of functions).
+I'm leaving this here, as I'd like to rebuild it, once I've got a better picture of how i would make it work in React.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
