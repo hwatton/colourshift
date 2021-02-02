@@ -1,5 +1,9 @@
 components:
 
+make more with functions, not classes.
+make a levels object that's exported into game.
+each object is a level, which can have it's own file elsewhere.
+
 navbar: basic with title and menu, which should have three li items .
     > about, accessibility apology.
     >

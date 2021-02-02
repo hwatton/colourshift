@@ -1,33 +1,31 @@
-circle{
-    mix-blend-mode: screen;
+circle {
+  mix-blend-mode: screen;
 }
 
-.svgHolder{
-    will-change: opacity;
-    height: 90%;
-    margin: auto;
- 
+.svgHolder {
+  will-change: opacity;
+  height: 90%;
+  margin: auto;
 }
 
-.instructionHolder{
-    text-align: center;
-    position: absolute;
-    top: 20%;
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto; 
-    width: 500px
+.instructionHolder {
+  text-align: center;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
 }
 
-.instruction{
-    text-anchor: middle;
-    color: rgb(100, 0, 100);
-    font-family: "Prompt", sans-serif;
-    margin-top: 10;
-    margin-bottom: 0;
-    margin-left: 10;
-    margin-right: 10;
-    padding: 0%;
+.instruction {
+  text-anchor: middle;
+  color: rgb(100, 0, 100);
+  font-family: "Prompt", sans-serif;
+  margin-top: 10;
+  margin-bottom: 0;
+  margin-left: 10;
+  margin-right: 10;
+  padding: 0%;
 }
-

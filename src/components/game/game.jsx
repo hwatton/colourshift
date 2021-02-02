@@ -18,10 +18,12 @@ Make 5 levels without the grid.*/
 
   changeLevel() {
     console.log("clicked");
-    const index = Math.floor(Math.random() * 2);
-    this.setState((state) => {
+    {
+      /*
+  this.setState((state) => {
       return { gameLevel: 1 };
-    });
+    }); */
+    }
   }
   render() {
     let gameArray = [<Basics />, <LevelTwo />];
@@ -31,7 +33,7 @@ Make 5 levels without the grid.*/
           <h2 className="level">Level: {this.state.gameLevel + 1}</h2>
           <button onClick={this.changeLevel}>Next Level</button>
         </div>
-        <Basics />
+        {gameArray[0]}
       </div>
     );
   }
